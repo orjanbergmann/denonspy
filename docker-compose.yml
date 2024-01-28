@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  denonspy:
+    build:
+      context: .
+    restart: unless-stopped
+    privileged: true
+    command: >
+      sh -c "python3 main.py"
+    volumes:
+      - /dev/i2c-1/:/dev/i2c-1/
+    environment:
+      - DENON_IP=10.0.0.23

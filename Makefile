@@ -1,4 +1,7 @@
 
+daemon:
+	docker compose up --detach
+
 build:
 	docker build -t denonspy .
 
